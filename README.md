@@ -1,7 +1,10 @@
 # React Native Awesome Picker
-[![NPM Version](https://img.shields.io/npm/v/react-native-awesome-picker.svg?style=flat)](https://www.npmjs.com/package/react-native-awesome-picker)
+[![NPM Version](https://img.shields.io/npm/v/react-native-awesome-picker.svg?style=flat)](https://www.npmjs.com/package/react-native-awesome-picker) ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-green.svg)
 
-The package is both **Android** and **iOS** compatible.
+iOS | Android
+------- | ----
+<img src="https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/ios.gif" width="350"> | <img src="https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/android.gif" width="350">
+
 
 ## How to use?
 
@@ -32,8 +35,3 @@ renderPicker() {
   )
 }
 ```
-
-## Screenshots
-
-[<img src="https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/ios.gif" width="350">](https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/ios.gif)
-[<img src="https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/android.gif" width="350">](https://github.com/johniak/react-native-awesome-picker/raw/master/screenshoots/android.gif)
