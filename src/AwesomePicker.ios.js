@@ -18,7 +18,8 @@ export default class AwesomePicker extends Component {
   }
 
   openPicker = () => {
-    this.setState({isPickerOpened: true})
+    if (this.props.enabled)
+      this.setState({isPickerOpened: true})
   }
 
   initWithProps(props) {
@@ -146,5 +147,12 @@ AwesomePicker.propTypes = {
   children: PropTypes.array,
   selectedValue: PropTypes.any,
   onValueChange: PropTypes.func,
-  renderInput: PropTypes.func
+  renderInput: PropTypes.func,
+  testID: PropTypes.string,
+  enabled: PropTypes.bool,
+  itemStyle: PropTypes.object
+}
+
+AwesomePicker.defaultProps = {
+  enabled: true,
 }
