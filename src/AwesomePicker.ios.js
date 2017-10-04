@@ -130,15 +130,15 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     fontSize: 20,
+    color: '#CCD4DB'
   },
   textInputContainer: {
     alignSelf: 'stretch',
-    backgroundColor: 'white',
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderBottomColor: '#CCD4DB',
+    borderBottomWidth: 1,
     margin: 5,
     minHeight: 40,
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 })
 
@@ -150,7 +150,8 @@ AwesomePicker.propTypes = {
   renderInput: PropTypes.func,
   testID: PropTypes.string,
   enabled: PropTypes.bool,
-  itemStyle: PropTypes.object
+  itemStyle: PropTypes.object,
+  placeholder: PropTypes.string
 }
 
 AwesomePicker.defaultProps = {
