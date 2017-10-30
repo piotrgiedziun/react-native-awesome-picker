@@ -48,17 +48,21 @@ export default class AwesomePicker extends Component {
   renderButtons() {
     const defaultValue = this.props.selectedValue
     const {selectedValue} = this.state
+    const {cancelButtonLabel, cancelButtonLabel, customStyles} = this.props
+
     const allowConfirm = defaultValue === selectedValue || selectedValue === undefined
     return (
-      <View style={styles.buttonsContainer}>
-        <Button onPress={this.closePicker} title="Cancel"/>
-        <Button disabled={allowConfirm} onPress={this.confirm} title="Confirm"/>
+      <View style={[styles.buttonsContainer, customStyles.buttonsContainer]}>
+        <Button onPress={this.closePicker} title={cancelButtonLabel}/>
+        <Button disabled={allowConfirm} onPress={this.confirm} title={confirmButtonLabel}/>
       </View>)
   }
 
   renderInput() {
     const defaultValue = this.props.selectedValue
     const {reducedOptions} = this.state
+    const {customStyles} = this.props
+
     let label = null
     if (defaultValue) {
       label = reducedOptions[defaultValue]
@@ -67,8 +71,8 @@ export default class AwesomePicker extends Component {
       return this.props.renderInput(label)
     }
     return (
-      <TouchableOpacity style={styles.textInputContainer} onPress={this.openPicker}>
-        <Text style={styles.textInput}>
+      <TouchableOpacity style={[styles.textInputContainer, customStyles.textInputContainer]} onPress={this.openPicker}>
+        <Text style={[styles.textInput, customStyles.textInput]}>
           {label}
         </Text>
       </TouchableOpacity>
@@ -150,10 +154,14 @@ AwesomePicker.propTypes = {
   renderInput: PropTypes.func,
   testID: PropTypes.string,
   enabled: PropTypes.bool,
-  itemStyle: PropTypes.object,
-  placeholder: PropTypes.string
+  confirmButtonLabel: PropTypes.string,
+  cancelButtonLabel: PropTypes.string,
+  customStyles: PropTypes.object
 }
 
 AwesomePicker.defaultProps = {
   enabled: true,
+  confirmButtonLabel: "Confirm",
+  cancelButtonLabel: "Cancel",
+  customStyles: {}
 }
